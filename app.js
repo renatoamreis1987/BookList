@@ -11,7 +11,6 @@ class Book {
 
 class UI {
   static displayBooks() {
-
     const books = Store.getBooks();
 
     books.forEach((book) => {
@@ -88,7 +87,7 @@ class Store {
       }
     });
 
-    localStorage.setItem('books', JSON.stringify(books))
+    localStorage.setItem("books", JSON.stringify(books));
   }
 }
 
@@ -118,7 +117,7 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
   UI.addBookToList(book);
 
   // Add book to store
-  Store.addBook(book)
+  Store.addBook(book);
 
   // Show sucess message
   UI.showAlert("Book Added", "success");
@@ -133,7 +132,8 @@ document.querySelector("#book-list").addEventListener("click", (e) => {
   UI.deleteBook(e.target);
 
   // Remove a book from store
-  Store.removeBook(e.target.parentElement.previousElementSibling.textContent)
+
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
   // Show sucess message
   UI.showAlert("Book Removed", "success");
